@@ -36,7 +36,7 @@ public class MainActivity extends FragmentActivity implements OnDateSetListener,
                 datePickerDialog.setVibrate(isVibrate());
                 datePickerDialog.setYearRange(1985, 2028);
                 datePickerDialog.setCloseOnSingleTapDay(isCloseOnSingleTapDay());
-                datePickerDialog.show(getSupportFragmentManager(), DATEPICKER_TAG);
+                datePickerDialog.show(getFragmentManager(), DATEPICKER_TAG);
             }
         });
 
@@ -50,7 +50,7 @@ public class MainActivity extends FragmentActivity implements OnDateSetListener,
         });
 
         if (savedInstanceState != null) {
-            DatePickerDialog dpd = (DatePickerDialog) getSupportFragmentManager().findFragmentByTag(DATEPICKER_TAG);
+            DatePickerDialog dpd = (DatePickerDialog) getFragmentManager().findFragmentByTag(DATEPICKER_TAG);
             if (dpd != null) {
                 dpd.setOnDateSetListener(this);
             }
